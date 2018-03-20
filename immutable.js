@@ -15,6 +15,17 @@
   Be sure to console.log() both references to ensure that they are pointing to different objects.
 */
 
+const person = {
+  name: 'Rob',
+  age: '33',
+  hometown: 'AC'
+}
+
+const newPerson = Object.assign({}, person);
+
+newPerson.name = 'Josh';
+newPerson.age = '32';
+
 console.log(person);
 console.log(newPerson);
 
@@ -23,7 +34,9 @@ console.log(newPerson);
   Create a separate array of `superVillains`
   Concatenate the two of them together using `.concat()`
 */
-
+const superHeroes = ['Spiderman', 'Wolverine', 'Superman'];
+const superVillians = ['Doc Oct', 'Sabertooth', 'Lex Luthor'];
+const combinedSupers = superHeroes.concat(superVillians);
 console.log(superHeroes);
 console.log(superVillains);
 console.log(combinedSupers);
@@ -36,5 +49,13 @@ console.log(combinedSupers);
   The new object should filter out any scores that are < 34 Array.filter should be used here.
 */
 
+const studentScores = {
+  name: 'Josh',
+  age:33,
+  scores: [45, 8, 40, 76, 12, 4]
+}
+
+const studentAverage = Object.assign({}, studentScores);
+studentAverage.scores = studentAverage.scores.filter(score => score >= 35);
 console.log(studentScores);
 console.log(studentAverage);
